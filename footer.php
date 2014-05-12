@@ -35,7 +35,7 @@
 	<!-- <?php printf( __( '%d queries. %s seconds.', 'the-bootstrap' ), get_num_queries(), timer_stop(0, 3) ); ?> -->
 	<?php wp_footer(); ?>
     
-    <script src="wp-content/themes/the-bootstrap/js/classie.js"></script>
+    <script src="<?php echo bloginfo('template_directory'); ?>/js/classie.js"></script>
     <script>
 	var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
         menuRight = document.getElementById( 'cbp-spmenu-s2' ),
@@ -50,12 +50,12 @@
         bodyclass = document.getElementById( 'bodyclass' )
 		toggle = document.getElementById( 'toggle' )
  
-		showLeftPush.onclick = function() {
+		showRightPush.onclick = function() {
 			classie.toggle( this, 'active' );
-			classie.toggle( bodyclass, 'cbp-spmenu-push-toright' );
-			classie.toggle( toggle, 'cbp-spmenu-push-toright' );
-			classie.toggle( menuLeft, 'cbp-spmenu-open' );
-			disableOther( 'showLeftPush' );
+			classie.toggle( bodyclass, 'cbp-spmenu-push-toleft' );
+			classie.toggle( toggle, 'cbp-icon-push-toleft' );
+			classie.toggle( menuRight, 'cbp-spmenu-open' );
+			disableOther( 'showRightPush' );
 		};
 		
 		</script>

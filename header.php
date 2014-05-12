@@ -18,25 +18,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<title><?php wp_title( '&laquo;', true, 'right' ); ?></title>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href="<?php echo bloginfo('template_directory'); ?>/css/slidemenu.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic|Alegreya:400italic,400' rel='stylesheet' type='text/css'>
 		<?php tha_head_bottom(); ?>
 		<?php wp_head(); ?>
 	</head>
 	
 	<body <?php body_class(); ?>>
     <div id="bodyclass" class="cbp-spmenu-push">
-    	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-            <h3>Menu</h3>
-            <a href="#">Celery seakale</a>
-            <a href="#">Dulse daikon</a>
-            <a href="#">Zucchini garlic</a>
-            <a href="#">Catsear azuki bean</a>
-            <a href="#">Dandelion bunya</a>
-            <a href="#">Rutabaga</a>
+    	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        	<h3>Menu</h3>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         </nav>
         <div class="main">
-            <div id="showLeftPush"><a href="#" id="toggle"><i class="icon-reorder icon-large"></i></a></div>
+            <div id="showRightPush"><a href="#" id="toggle"><i class="fa-bars fa fa-lg"></i></a></div>
         </div>
 		<div class="container">
 			<div id="page" class="hfeed row">
